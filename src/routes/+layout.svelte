@@ -27,11 +27,20 @@
 	<meta property="twitter:image" content={image} />
 
 	<meta name="robots" content="index, follow" />
+
+	<style lang="postcss">
+		html {
+			@apply h-full;
+		}
+		body {
+			@apply h-full bg-grey-dark;
+		}
+	</style>
 </svelte:head>
 
-<div class="h-full bg-grey-dark flex flex-col">
+<div class="min-h-full flex flex-col">
 	<div class="h-0 border-white border-t-4 my-20"></div>
-	<div class="grow flex flex-col justify-center">
+	<div class="container mx-auto px-4 grow flex flex-col justify-center">
 		<slot />
 	</div>
 	<div class="h-0 border-white border-t-4 my-20"></div>
