@@ -15,5 +15,5 @@ export default {
 			sans: ['Electrolize', 'sans-serif']
 		}
 	},
-	plugins: []
+	plugins: [require('@tailwindcss/typography')]
 };

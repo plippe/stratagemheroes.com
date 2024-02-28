@@ -18,7 +18,7 @@
 						class="w-[50px] aspect-square object-cover object-center"
 					/>
 					<div>
-						<h2 class="text-yellow">{stratagem.name}</h2>
+						<h2 class="text-white">{stratagem.name}</h2>
 						<div class="flex gap-x-1">
 							{#each stratagem.inputs as input}
 								<StratagemInput {input} class="text-grey-light w-[18px]" />

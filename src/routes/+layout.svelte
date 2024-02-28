@@ -47,5 +47,21 @@
 	<div class="container mx-auto px-4 grow flex flex-col justify-center">
 		<slot />
 	</div>
-	<div class="h-0 border-white border-t-4 my-20"></div>
+	<div class="h-0 border-white border-t-4 my-20 pt-1 text-right">
+		<div class="container mx-auto px-4">
+			<div class="text-xs sm:text-sm text-white">
+				Buy Helldivers 2 on
+				<a href="https://www.playstation.com/en-ie/games/helldivers-2/#buy-now" class="text-yellow"
+					>PlayStation</a
+				>
+				or
+				<a href="https://store.steampowered.com/app/553850/HELLDIVERS_2/" class="text-yellow"
+					>Steam</a
+				>
+			</div>
+			<a href="/copyright" class="text-xs sm:text-sm text-yellow">
+				All rights belong to the respective owners
+			</a>
+		</div>
+	</div>
 </div>
