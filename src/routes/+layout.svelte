@@ -38,7 +38,11 @@
 	</style>
 </svelte:head>
 
-<div class="min-h-full flex flex-col">
+<div
+	class="absolute inset-0 bg-[url('/helldivers2/superearth.png')] bg-no-repeat bg-center opacity-10"
+/>
+
+<div class="relative min-h-full flex flex-col">
 	<div class="h-0 border-white border-t-4 my-20"></div>
 	<div class="container mx-auto px-4 grow flex flex-col justify-center">
 		<slot />
