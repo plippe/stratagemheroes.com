@@ -9,7 +9,7 @@
 </script>
 
 <div class="text-center">
-	<h1 class="text-white text-5xl mb-10 uppercase">Get Ready</h1>
+	<h1 class="text-white text-5xl font-bold mb-10 uppercase">Get Ready</h1>
 
 	<div>
 		<div class="text-white">Round</div>

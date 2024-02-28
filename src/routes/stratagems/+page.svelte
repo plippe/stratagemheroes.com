@@ -3,7 +3,7 @@
 	import StratagemInput from '$lib/stratagems/StratagemInput.svelte';
 </script>
 
-<h1 class="text-white text-4xl mb-10 uppercase">Stratagems</h1>
+<h1 class="text-white text-4xl mb-10 font-bold uppercase">Stratagems</h1>
 
 {#each StratagemCategories.all as category}
 	<div class="mb-10">

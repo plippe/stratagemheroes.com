@@ -6,7 +6,7 @@
 </script>
 
 <div class="text-center flex flex-col justify-between">
-	<h1 class="text-white text-5xl mb-10 uppercase">Game Over</h1>
+	<h1 class="text-white text-5xl font-bold mb-10 uppercase">Game Over</h1>
 
 	<div>
 		<div class="text-white uppercase">Your final score</div>

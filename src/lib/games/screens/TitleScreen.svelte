@@ -6,7 +6,7 @@
 </script>
 
 <div class="text-center">
-	<h1 class="text-white text-4xl mb-10 uppercase">Stratagem Heroes</h1>
+	<h1 class="text-white text-5xl font-bold mb-10 uppercase">Stratagem Heroes</h1>
 
 	<button class="text-yellow hover:text-grey-light text-lg" on:click={play}>Start!</button>
 </div>
