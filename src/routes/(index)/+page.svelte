@@ -1,5 +1,7 @@
-<div class="text-center">
-	<h1 class="text-white text-4xl mb-10">STRATAGEM HEROES</h1>
+<script lang="ts">
+	import Game from '$lib/games/Game.svelte';
+</script>
 
-	<button class="text-yellow">Coming Soon!</button>
+<div class="text-center">
+	<Game />
 </div>
