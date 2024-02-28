@@ -36,6 +36,13 @@
 			@apply h-full bg-grey-dark;
 		}
 	</style>
+
+	<script
+		defer
+		src="https://eu.umami.is/script.js"
+		data-website-id="c5a5a057-4245-4ea8-ae4c-99c96fbfc423"
+		data-domains="stratagemheroes.com"
+	></script>
 </svelte:head>
 
 <div
