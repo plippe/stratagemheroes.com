@@ -10,6 +10,4 @@
 			href="mailto:p.vinchon@gmail.com">contact me</a
 		> and I will comply with your request immediately.
 	</p>
-
-	<p class="text-white">Freedom. Peace. Managed Democracy.</p>
 </div>
