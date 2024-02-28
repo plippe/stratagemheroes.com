@@ -5,6 +5,7 @@
 	import StratagemInputComponent from '$lib/stratagems/StratagemInput.svelte';
 	import { Stratagems, StratagemInput } from '$lib/stratagems/Stratagems';
 	import { GameScore } from '$lib/games/GameScore';
+	import { swipe } from 'svelte-gestures';
 
 	GameContext.perfect.set(true);
 	const round = GameContext.round.get;
@@ -35,18 +36,7 @@
 		}
 	}, 10);
 
-	const inputToStratagemInput = (event: KeyboardEvent) => {
-		if (InputManager.upKeyDown(event)) return StratagemInput.Up;
-		if (InputManager.rightKeyDown(event)) return StratagemInput.Right;
-		if (InputManager.downKeyDown(event)) return StratagemInput.Down;
-		if (InputManager.leftKeyDown(event)) return StratagemInput.Left;
-
-		return null;
-	};
-
-	const onKeyDown = (event: KeyboardEvent) => {
-		const input = inputToStratagemInput(event);
-
+	const play = (input: StratagemInput) => {
 		if (currentStratagemInput !== input) {
 			GameContext.perfect.set(false);
 			currentStratagemInputIndex = 0;
@@ -75,9 +65,49 @@
 		GameContext.score.increase(GameScore.perfectBonus($perfect));
 		GameContext.state.set(GameState.Score);
 	};
+
+	const keyboardEventToStratagemInput = (event: KeyboardEvent) => {
+		if (InputManager.upKeyDown(event)) return StratagemInput.Up;
+		if (InputManager.rightKeyDown(event)) return StratagemInput.Right;
+		if (InputManager.downKeyDown(event)) return StratagemInput.Down;
+		if (InputManager.leftKeyDown(event)) return StratagemInput.Left;
+
+		return null;
+	};
+
+	const onKeyUp = (event: KeyboardEvent) => {
+		const input = keyboardEventToStratagemInput(event);
+		if (null === input) return;
+
+		play(input);
+	};
+
+	const swipeEventToStratagemInput = (
+		event: CustomEvent<{ direction: 'top' | 'right' | 'bottom' | 'left' }>
+	) => {
+		switch (event.detail.direction) {
+			case 'top':
+				return StratagemInput.Up;
+			case 'right':
+				return StratagemInput.Right;
+			case 'bottom':
+				return StratagemInput.Down;
+			case 'left':
+				return StratagemInput.Left;
+		}
+	};
+
+	const onSwipe = (event: CustomEvent<{ direction: 'top' | 'right' | 'bottom' | 'left' }>) => {
+		const input = swipeEventToStratagemInput(event);
+		play(input);
+	};
 </script>
 
-<svelte:window on:keyup={onKeyDown} />
+<svelte:body
+	on:keyup={onKeyUp}
+	on:swipe={onSwipe}
+	use:swipe={{ timeframe: 300, minSwipeDistance: 60 }}
+/>
 
 <div class="flex gap-x-4 sm:gap-x-8 max-w-full">
 	<div class="hidden sm:block text-left">
