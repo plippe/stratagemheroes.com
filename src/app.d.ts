@@ -8,6 +8,16 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface KeyboardLayoutMap extends Map<string, string> {}
+
+	interface Navigator {
+		keyboard:
+			| undefined
+			| {
+					getLayoutMap: () => Promise<KeyboardLayoutMap>;
+			  };
+	}
 }
 
 export {};
