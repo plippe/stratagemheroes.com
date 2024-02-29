@@ -50,7 +50,7 @@
 		}
 
 		GameContext.score.increase(GameScore.stratagemPoints(currentStratagem));
-		currentDuration += 2000;
+		currentDuration += 1000;
 		currentStratagemInputIndex = 0;
 
 		const nextStratagemIndex = currentStratagemIndex + 1;
